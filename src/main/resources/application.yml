@@ -1,0 +1,60 @@
+server:
+  port: 80
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+      username: root
+      password: a123456
+
+
+
+#      Oracle配置
+#      driver-class-name: oracle.jdbc.driver.OracleDriver
+#      url: jdbc:oracle:thin:@localhost:1521:orcl
+#      username: system
+#      password: a123456
+
+  #热部署相关配置
+  devtools:
+    restart:
+#      忽略那些文件修改不需要热部署
+      additional-exclude: static/**,public/**
+#      是否启动热部署
+      enabled: true
+  #redis配置
+  redis:
+    host: localhost
+    port: 6379
+#mongodb配置
+  data:
+    mongodb:
+      uri: mongodb://localhost/yutong
+      port: 27017
+
+#      redis缓存配置
+  cache:
+    type: redis
+    redis:
+      use-key-prefix: true #是否带前缀
+      time-to-live: 10s #缓存过期时间
+      key-prefix: redis_ #和是否带前缀有条件关系
+      cache-null-values: true #是否缓存空值,false取空会报错
+
+
+
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      #表前缀
+      table-prefix: tbl_
+      #主键自增
+      id-type: auto
+  #控制台输出sql日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
