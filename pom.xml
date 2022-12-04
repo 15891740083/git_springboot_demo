@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.itheima</groupId>
-    <artifactId>springbootssm</artifactId>
+    <artifactId>springbootssm2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springbootssm2</name>
     <description>springbootssm2</description>
